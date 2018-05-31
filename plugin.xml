@@ -19,5 +19,15 @@
             id="com.ray.gef.helloworld.perspective">
       </perspective>
    </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.ray.gef.helloworld.view.editor.DiagramEditor"
+            default="false"
+            icon="icons/gar.ico"
+            id="com.ray.gef.helloworld.view.editor.DiagramEditor"
+            name="Diagram Editor">
+      </editor>
+   </extension>
 
 </plugin>
