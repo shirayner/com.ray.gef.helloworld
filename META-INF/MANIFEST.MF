@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Helloworld
+Bundle-SymbolicName: com.ray.gef.helloworld;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.ray.gef.helloworld.app.Activator
+Bundle-Vendor: RAY
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.equinox.ds,
+ org.eclipse.equinox.util,
+ org.eclipse.equinox.event,
+ org.eclipse.gef;bundle-version="3.11.0",
+ org.eclipse.ui.views;bundle-version="3.9.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: com.ray.gef.helloworld
+Bundle-ActivationPolicy: lazy
