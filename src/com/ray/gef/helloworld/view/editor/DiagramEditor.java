@@ -8,7 +8,7 @@ import org.eclipse.gef.ui.parts.GraphicalEditor;
 
 import com.ray.gef.helloworld.model.ContentsModel;
 import com.ray.gef.helloworld.model.HelloModel;
-import com.ray.gef.helloworld.part.factory.PartFactory;
+import com.ray.gef.helloworld.part.PartFactory;
 
 public class DiagramEditor extends GraphicalEditor {
 	public static final String EDITOR_ID = "com.ray.gef.helloworld.view.editor.DiagramEditor";

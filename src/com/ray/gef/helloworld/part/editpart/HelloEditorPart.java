@@ -1,4 +1,6 @@
-package com.ray.gef.helloworld.part;
+package com.ray.gef.helloworld.part.editpart;
+
+import java.beans.PropertyChangeEvent;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.CompoundBorder;
@@ -14,7 +16,7 @@ import com.ray.gef.helloworld.model.HelloModel;
 
 
 
-public class HelloEditorPart extends AbstractGraphicalEditPart {
+public class HelloEditorPart extends EditPartWithListener {
 
 	/**
 	 * 主要是在这个方法中进行作图
@@ -53,4 +55,17 @@ public class HelloEditorPart extends AbstractGraphicalEditPart {
 		((GraphicalEditPart)getParent()).setLayoutConstraint(this,getFigure(),constraint);
 		
 	}
+
+	/**
+	 * 监听模型变化
+	 */
+	@Override
+	public void propertyChange(PropertyChangeEvent event) {
+		if(event.getPropertyName().equals(HelloModel.P_CONSTRAINT)){
+			refreshVisuals();
+		}
+	}
+	
+	
+	
 }

@@ -1,4 +1,4 @@
-package com.ray.gef.helloworld.part.factory;
+package com.ray.gef.helloworld.part;
 
 
 import org.eclipse.gef.EditPart;
@@ -6,8 +6,8 @@ import org.eclipse.gef.EditPartFactory;
 
 import com.ray.gef.helloworld.model.ContentsModel;
 import com.ray.gef.helloworld.model.HelloModel;
-import com.ray.gef.helloworld.part.ContentsEditorPart;
-import com.ray.gef.helloworld.part.HelloEditorPart;
+import com.ray.gef.helloworld.part.editpart.ContentsEditorPart;
+import com.ray.gef.helloworld.part.editpart.HelloEditorPart;
 
 
 public class PartFactory implements EditPartFactory {

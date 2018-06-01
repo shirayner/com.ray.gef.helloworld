@@ -23,6 +23,7 @@
          point="org.eclipse.ui.editors">
       <editor
             class="com.ray.gef.helloworld.view.editor.DiagramEditor"
+            contributorClass="com.ray.gef.helloworld.action.DiagramActionBarContributor"
             default="false"
             icon="icons/gar.ico"
             id="com.ray.gef.helloworld.view.editor.DiagramEditor"
