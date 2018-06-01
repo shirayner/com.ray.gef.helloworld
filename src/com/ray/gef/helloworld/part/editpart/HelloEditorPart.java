@@ -9,10 +9,11 @@ import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
 import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
-import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 
 import com.ray.gef.helloworld.model.HelloModel;
+import com.ray.gef.helloworld.part.policy.CustomComponentEditPolicy;
 
 
 
@@ -40,20 +41,24 @@ public class HelloEditorPart extends EditPartWithListener {
 
 	@Override
 	protected void createEditPolicies() {
-		// TODO Auto-generated method stub
+
+		//安装Policy
+		//参数一：指定 EditPolicy的角色，设置这个变量是因为：一个EditPart 可以安装很多 EditPolicy，如果他们的角色都相同，就是这个字符串参数相同，
+		//那么只有最后安装的一个 policy 是有效的。
+		installEditPolicy(EditPolicy.COMPONENT_ROLE, new CustomComponentEditPolicy());
 
 	}
 
-	
+
 	/**
 	 * GEF在 AbstractEditPart 类中提供此方法用于把约束施加给图形
 	 */
 	@Override
 	public void refreshVisuals(){
 		Rectangle constraint = ((HelloModel)getModel()).getConstraint();
-		
+
 		((GraphicalEditPart)getParent()).setLayoutConstraint(this,getFigure(),constraint);
-		
+
 	}
 
 	/**
@@ -61,11 +66,12 @@ public class HelloEditorPart extends EditPartWithListener {
 	 */
 	@Override
 	public void propertyChange(PropertyChangeEvent event) {
+		//EditPart监听到模型改变
 		if(event.getPropertyName().equals(HelloModel.P_CONSTRAINT)){
 			refreshVisuals();
 		}
 	}
-	
-	
-	
+
+
+
 }
