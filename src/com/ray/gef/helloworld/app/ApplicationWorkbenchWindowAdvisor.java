@@ -13,8 +13,8 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
     }
     
     @Override
-    public ActionBarAdvisor createActionBarAdvisor(IActionBarConfigurer configurer) {
-        return new ActionBarAdvisor(configurer);
+    public ActionBarAdvisor createActionBarAdvisor(IActionBarConfigurer configurer) { 
+    	return new ApplicationActionBarAdvisor(configurer);
     }
     
     @Override

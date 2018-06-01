@@ -11,6 +11,8 @@ import org.eclipse.ui.PlatformUI;
  */
 public class Application implements IApplication {
 
+	public static final String PLUGIN_ID = "com.ray.gef.helloworld";
+	
 	@Override
 	public Object start(IApplicationContext context) throws Exception {
 		Display display = PlatformUI.createDisplay();
