@@ -6,6 +6,8 @@ import org.eclipse.draw2d.IFigure;
 import org.eclipse.draw2d.Label;
 import org.eclipse.draw2d.LineBorder;
 import org.eclipse.draw2d.MarginBorder;
+import org.eclipse.draw2d.geometry.Rectangle;
+import org.eclipse.gef.GraphicalEditPart;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 
 import com.ray.gef.helloworld.model.HelloModel;
@@ -40,4 +42,15 @@ public class HelloEditorPart extends AbstractGraphicalEditPart {
 
 	}
 
+	
+	/**
+	 * GEF在 AbstractEditPart 类中提供此方法用于把约束施加给图形
+	 */
+	@Override
+	public void refreshVisuals(){
+		Rectangle constraint = ((HelloModel)getModel()).getConstraint();
+		
+		((GraphicalEditPart)getParent()).setLayoutConstraint(this,getFigure(),constraint);
+		
+	}
 }

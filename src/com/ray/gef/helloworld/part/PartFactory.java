@@ -4,6 +4,7 @@ package com.ray.gef.helloworld.part;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPartFactory;
 
+import com.ray.gef.helloworld.model.ContentsModel;
 import com.ray.gef.helloworld.model.HelloModel;
 
 
@@ -29,7 +30,10 @@ public class PartFactory implements EditPartFactory {
 		//根据模型类创建其控制器
 		if (modelElement instanceof HelloModel)
 			return new HelloEditorPart();
-
+		else if(modelElement instanceof ContentsModel){
+			return new ContentsEditorPart();
+			
+		}
 
 		throw new RuntimeException(
 				"Can't create part for model element: "
