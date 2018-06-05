@@ -9,6 +9,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.XYLayoutEditPolicy;
 import org.eclipse.gef.requests.CreateRequest;
 
+import com.ray.gef.helloworld.model.AbstractModel;
 import com.ray.gef.helloworld.model.HelloModel;
 import com.ray.gef.helloworld.part.command.ChangeConstraintCommand;
 import com.ray.gef.helloworld.part.command.CreateCommand;
@@ -33,6 +34,7 @@ public class CustomerXYLayoutEditPolicy extends XYLayoutEditPolicy {
 	protected Command getCreateCommand(CreateRequest request) {
 		CreateCommand command = new CreateCommand();
 		// 产生创建图形的尺寸和位置
+		//Rectangle constraint = (Rectangle) getConstraintFor(request);
 		Rectangle constraint = (Rectangle) getConstraintFor(request);
 		
 		// 获得新创建的图形

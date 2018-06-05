@@ -4,6 +4,9 @@ import org.eclipse.draw2d.geometry.Rectangle;
 
 public class HelloModel extends AbstractModel{
 	
+	public static final int  HEIGHT = 80;
+	public static final int  WIDTH = 100;
+	
 	public static final String P_CONSTRAINT = "_constraint";
 
 	private String text = "Hello World";

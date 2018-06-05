@@ -7,7 +7,7 @@ import org.eclipse.ui.views.properties.IPropertyDescriptor;
 import org.eclipse.ui.views.properties.IPropertySource;
 
 public class AbstractModel implements IPropertySource{
-
+	
 	private  PropertyChangeSupport listeners = new PropertyChangeSupport(this);
 
 	public void addPropertyChangeListener(PropertyChangeListener l) {

@@ -13,6 +13,7 @@ import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.GraphicalEditPart;
 
 import com.ray.gef.helloworld.model.HelloModel;
+import com.ray.gef.helloworld.part.figure.HelloFigure;
 import com.ray.gef.helloworld.part.policy.CustomComponentEditPolicy;
 
 
@@ -24,19 +25,19 @@ public class HelloEditorPart extends EditPartWithListener {
 	 */
 	@Override
 	protected IFigure createFigure() {
-		HelloModel model = (HelloModel)getModel();
+		//注：只在创建时执行，可设置一些初始值
+		
+		//1.创建Figure
+		HelloFigure helloFigure=new HelloFigure((HelloModel)getModel());
+		
+		//2 设置基本属性
+		//2.1设置宽高
+		helloFigure.setSize(HelloModel.WIDTH, HelloModel.HEIGHT);
+		
+		//2.2设置Border
+		helloFigure.setBorder(new CompoundBorder(new LineBorder(), new MarginBorder(3)));
 
-		Label label = new Label();
-		label.setText(model.getText());
-
-		label.setBorder(new CompoundBorder(new LineBorder(), new MarginBorder(3)));
-
-		//设置背景颜色
-		label.setBackgroundColor(ColorConstants.orange);
-
-		label.setOpaque(true);
-
-		return label;
+		return helloFigure;
 	}
 
 	@Override
